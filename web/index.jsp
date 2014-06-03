@@ -55,6 +55,7 @@
         <h1>Trabalho LPO-2014-1</h1>
         <a href="criar-oferta.html">Cadastrar Oferta</a>
         <a href="lista-oferta.html">Listar Ofertas</a>
+        <a href="criar-proposta.html">Cadastrar Proposta</a>
         
     </body>
 </html>
