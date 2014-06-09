@@ -20,7 +20,7 @@ import trabalho.lpo.db.PropostaDAO;
  *
  * @author LARISSA
  */
-@WebServlet(name = "CriaOferta", urlPatterns = {"/criar-proposta.html"})
+@WebServlet(name = "CriaProposta", urlPatterns = {"/criar-proposta.html"})
 public class CriaProposta extends HttpServlet {
 
     private static PropostaDAO dao = null;

@@ -1,15 +1,14 @@
 <%-- 
-    Document   : index
-    Created on : 06/05/2014, 19:57:05
-    Author     : guilhermecortes
+    Document   : exclui-proposta-resultado
+    Author     : LARISSA
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Trabalho LPO-2014-1</title>
+        <title>Criar Proposta: Resultado</title>
         
         <!-- CSS -->
         <style>
@@ -36,7 +35,7 @@
                 border-radius: 5px;
                 color: #323232;
                 float: left;
-                margin: 0 10px 0 0;
+                margin: 0 20px 0 0;
                 padding: 5px 10px;
                 text-decoration: none;
             }
@@ -49,14 +48,22 @@
             
             
         </style>
-        <!-- CSS -->
+        <!-- CSS -->        
+        
+        
     </head>
     <body>
-        <h1>Trabalho LPO-2014-1</h1>
-        <a href="criar-oferta.html">Cadastrar Oferta</a>
-        <a href="lista-oferta.html">Listar Ofertas</a>
-        <a href="criar-proposta.html">Cadastrar Proposta</a>
-        <a href="lista-proposta.html">Listar Proposta</a>
+        
+        
+        <!-- Tela para exibir o resultado do cadastro da proposta -->
+        <h1>Exclui Proposta: Resultado</h1>
+        
+        <p>
+            Oferta excluída do com sucesso!
+        </p>
+        
+        <p><a href='criar-proposta.html'>Cadastrar Proposta</a></p>
+        <p><a href='lista-proposta.html'>Listar Propostas</a></p>
         
     </body>
 </html>

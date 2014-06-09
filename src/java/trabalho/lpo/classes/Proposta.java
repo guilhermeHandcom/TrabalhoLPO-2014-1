@@ -11,29 +11,26 @@ package trabalho.lpo.classes;
  * @author LARISSA
  */
 public class Proposta {
-    private int cod_oferta;
+    private int cod_proposta;
     private String nome_user;
     private String desejo;
 
-    public Proposta(int cod_oferta, String nome_user, String desejo) {
-        this.cod_oferta = cod_oferta;
+    public Proposta(int cod_proposta, String nome_user, String desejo) {
+        this.cod_proposta = cod_proposta;
         this.nome_user = nome_user;
         this.desejo = desejo;
     }
 
     public Proposta() {
     }
-
-
     
-    
-
-    public int getCod_oferta() {
-        return cod_oferta;
+   
+    public int getCod_proposta() {
+        return cod_proposta;
     }
 
-    public void setCod_oferta(int cod_oferta) {
-        this.cod_oferta = cod_oferta;
+    public void setCod_proposta(int cod_proposta) {
+        this.cod_proposta = cod_proposta;
     }
 
     public String getNome_user() {
