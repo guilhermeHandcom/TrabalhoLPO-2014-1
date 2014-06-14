@@ -15,17 +15,19 @@ public class Grupo {
     private String titulo;
     private String descricao;
     private int fase;
-    private int codProposta;
     
-    public Grupo(int codGrupo,  String titulo, String descricao, int fase, int codProposta) {
+    public Grupo(int codGrupo,  String titulo, String descricao, int fase) {
         
         this.codGrupo = codGrupo;
         this.titulo = titulo;
         this.descricao = descricao;
         this.fase = fase;
-        this.codProposta = codProposta;
         
       
+    }
+
+    public Grupo() {
+       
     }
 
     /**
@@ -84,17 +86,7 @@ public class Grupo {
         this.fase = fase;
     }
 
-    /**
-     * @return the codProposta
-     */
-    public int getCodProposta() {
-        return codProposta;
-    }
+   
 
-    /**
-     * @param codProposta the codProposta to set
-     */
-    public void setCodProposta(int codProposta) {
-        this.codProposta = codProposta;
-    }
+   
 }

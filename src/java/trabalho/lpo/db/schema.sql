@@ -18,8 +18,7 @@ CREATE TABLE grupo (
 	cod_grupo int not null generated always as identity,
 	titulo VARCHAR(50),
 	descricao VARCHAR(80),
-	fase int,
-	cod_proposta INT
+	fase int
 	
 )
-
+select * from grupo
