@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -44,26 +45,11 @@ public class SalvarProposta extends HttpServlet {
         proposta.setNome_user(request.getParameter("nome_user"));
         proposta.setDesejo(request.getParameter("desejo"));
         dao.salvarProposta(proposta);
-
         
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        try {
-            
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SalvarOferta</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet SalvarProposta at " + request.getContextPath() + "</h1>");
-            out.println("Usuário: " + proposta.getNome_user());
-            out.println("</br>Desejo: " + proposta.getDesejo());
-            out.println("</br><a href='lista-proposta.html'>Listar</a>");
-            out.println("</body>");
-            out.println("</html>");
-        } finally {            
-            out.close();
-        }
+        RequestDispatcher despachante = request.getRequestDispatcher("/salvar-proposta.jsp");
+        request.setAttribute("proposta", proposta);//passando a lista para poder pegar no jsp
+        despachante.forward(request, response);
+
     }
 
     @Override
