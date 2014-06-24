@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -52,25 +53,9 @@ public class SalvarGrupo extends HttpServlet {
         dao.salvarGrupo(grupo);
 
         
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        try {
-            
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SalvarOferta</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet SalvarGrupo at " + request.getContextPath() + "</h1>");
-            out.println("Titulo: " + grupo.getTitulo());
-            out.println("</br>Descrição Grupo: " + grupo.getDescricao());
-            out.println("</br>Fase: " + grupo.getFase());
-            out.println("</br><a href='lista-grupo.html'>Listar</a>");
-            out.println("</body>");
-            out.println("</html>");
-        } finally {            
-            out.close();
-        }
+        RequestDispatcher despachante = request.getRequestDispatcher("/salvar-grupo.jsp");
+        request.setAttribute("grupo", grupo);//passando a lista para poder pegar no jsp
+        despachante.forward(request, response);
     }
 
     @Override

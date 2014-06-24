@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,27 +33,12 @@ public class SalvarOferta extends HttpServlet {
         oferta.setDesejo(request.getParameter("desejo"));
         oferta.setCod_oferta(Integer.parseInt(request.getParameter("cod_oferta")));
         dao.salvarOferta(oferta);
+
+        RequestDispatcher despachante = request.getRequestDispatcher("/salvar-oferta.jsp");
+        request.setAttribute("oferta", oferta);//passando a lista para poder pegar no jsp
+        despachante.forward(request, response);        
         
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        try {
-            
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SalvarOferta</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet SalvarOferta at " + request.getContextPath() + "</h1>");
-            out.println("Usuário: " + oferta.getNome_usuario());
-            out.println("</br>Oferta: " + oferta.getNome_oferta());
-            out.println("</br>Produto: " + oferta.getNome_produto());
-            out.println("</br>Desejo: " + oferta.getDesejo());
-            out.println("</br><a href='lista-oferta.html'>Listar</a>");
-            out.println("</body>");
-            out.println("</html>");
-        } finally {            
-            out.close();
-        }
+        
     }
 
     @Override
